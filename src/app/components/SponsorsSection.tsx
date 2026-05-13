@@ -1,12 +1,14 @@
 import { motion } from 'motion/react';
 
 export function SponsorsSection() {
+  const basePath = import.meta.env.BASE_URL;
+  
   const sponsors = [
-    { name: 'Mattos Calçados e Confecções', logo: '/sponsors/mattos.png' },
-    { name: 'Center Cell Celulares', logo: '/sponsors/center-cell.png' },
-    { name: 'Código Seguros', logo: '/sponsors/codigo-seguros.png' },
-    { name: 'Barbearia Liviz', logo: '/sponsors/barbearia-liviz.png' },
-    { name: 'Cachaça Amelia', logo: '/sponsors/cachaca-amelia.png' },
+    { name: 'Mattos Calçados e Confecções', logo: `${basePath}sponsors/mattos.png` },
+    { name: 'Center Cell Celulares', logo: `${basePath}sponsors/center-cell.png` },
+    { name: 'Código Seguros', logo: `${basePath}sponsors/codigo-seguros.png` },
+    { name: 'Barbearia Liviz', logo: `${basePath}sponsors/barbearia-liviz.png` },
+    { name: 'Cachaça Amelia', logo: `${basePath}sponsors/cachaca-amelia.png` },
   ];
 
   return (
