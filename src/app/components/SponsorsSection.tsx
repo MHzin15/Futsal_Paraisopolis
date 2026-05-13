@@ -2,9 +2,11 @@ import { motion } from 'motion/react';
 
 export function SponsorsSection() {
   const sponsors = [
-    { name: 'Mattos Calçados e Confecções', logo: 'M' },
-    { name: 'Elewe Sports', logo: 'E' },
-    { name: 'Cyber Games', logo: 'CG' },
+    { name: 'Mattos Calçados e Confecções', logo: '/sponsors/mattos.png' },
+    { name: 'Center Cell Celulares', logo: '/sponsors/center-cell.png' },
+    { name: 'Código Seguros', logo: '/sponsors/codigo-seguros.png' },
+    { name: 'Barbearia Liviz', logo: '/sponsors/barbearia-liviz.png' },
+    { name: 'Cachaça Amelia', logo: '/sponsors/cachaca-amelia.png' },
   ];
 
   return (
@@ -46,17 +48,12 @@ export function SponsorsSection() {
               className="relative group"
             >
               <div className="absolute inset-0 bg-[#D4A64A] blur-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-              <div className="relative bg-[#0A0A0A] border-2 border-[#D4A64A]/30 aspect-square flex items-center justify-center hover:border-[#D4A64A] transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,166,74,0.4)]">
-                <div 
-                  className="text-[#D4A64A]"
-                  style={{ 
-                    fontFamily: 'Bebas Neue, sans-serif',
-                    fontSize: 'clamp(2rem, 4vw, 3rem)',
-                    letterSpacing: '0.05em',
-                  }}
-                >
-                  {sponsor.logo}
-                </div>
+              <div className="relative bg-[#0A0A0A] border-2 border-[#D4A64A]/30 aspect-square flex items-center justify-center hover:border-[#D4A64A] transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,166,74,0.4)] overflow-hidden p-4">
+                <img 
+                  src={sponsor.logo} 
+                  alt={sponsor.name}
+                  className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                />
               </div>
             </motion.div>
           ))}
