@@ -25,28 +25,34 @@ export function MatchesSection() {
 
   const pastMatches = [
     {
-      opponent: 'Sporting Campo Limpo',
-      result: 'V',
-      score: '5 - 2',
-      date: '18 MAR 2026',
-    },
-    {
-      opponent: 'Atlético M\'Boi',
-      result: 'E',
-      score: '3 - 3',
-      date: '11 MAR 2026',
-    },
-    {
-      opponent: 'FC Brooklin',
-      result: 'V',
-      score: '4 - 1',
-      date: '04 MAR 2026',
-    },
-    {
-      opponent: 'Juventus Grajaú',
+      opponent: 'Resenha FC',
       result: 'D',
-      score: '2 - 3',
-      date: '26 FEV 2026',
+      score: '3 - 7',
+      date: '02 MAI 2026',
+    },
+    {
+      opponent: 'Borussia Futsal',
+      result: 'E',
+      score: '4 - 4',
+      date: '29 JAN 2026',
+    },
+    {
+      opponent: 'Esther Real',
+      result: 'V',
+      score: '9 - 2',
+      date: '27 JAN 2026',
+    },
+    {
+      opponent: 'Jatobá FC',
+      result: 'V',
+      score: '7 - 2',
+      date: '21 JAN 2026',
+    },
+    {
+      opponent: 'Barcelona',
+      result: 'V',
+      score: '8 - 3',
+      date: '09 JAN 2026',
     },
   ];
 
