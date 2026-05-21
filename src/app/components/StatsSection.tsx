@@ -2,11 +2,11 @@ import { motion } from 'motion/react';
 
 export function StatsSection() {
   const stats = [
-    { value: '4', label: 'Jogos' },
-    { value: '2', label: 'Vitórias' },
+    { value: '5', label: 'Jogos' },
+    { value: '3', label: 'Vitórias' },
     { value: '1', label: 'Empates' },
     { value: '1', label: 'Derrotas' },
-    { value: '58%', label: 'Aproveitamento' },
+    { value: '67%', label: 'Aproveitamento' },
   ];
 
   return (
