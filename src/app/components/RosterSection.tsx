@@ -1,62 +1,115 @@
 import { motion } from 'motion/react';
-import { Target, Zap } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import sanseiImage from 'figma:asset/ab8f59f0a3ae216d2db22558e8a094f053bcdc03.png';
-import fernandoImage from 'figma:asset/febe5e1062558e1b58417a268b1e69b6892cada1.png';
-import rafaelImage from 'figma:asset/fb9a8ab53f82cd99b45a4f193b6b8c52bc0f214c.png';
-import ericImage from 'figma:asset/2d41166f30172d4dff474d3e94202335f9d83f39.png';
-import carlinhosImage from 'figma:asset/13008145e66f41bd9e92719f4fc08df5b06449ae.png';
-import andreImage from 'figma:asset/f9eedd4db86682f013ba4b17e48a53b217d993ee.png';
+import andreImage from '@/assets/andre.png';
+import rafaelImage from '@/assets/rafael.png';
+import bolachaImage from '@/assets/bolacha.png';
+import ezequielImage from '@/assets/ezequiel_augusto.png';
+import alyssonImage from '@/assets/alysson.jpeg';
+import sanseiImage from '@/assets/sansei.png';
+import carlinhosImage from '@/assets/carlinhos.png';
+import ericImage from '@/assets/eric.png';
+import felipeImage from '@/assets/felipe.png';
+import fernandoImage from '@/assets/fernando_ferraz.png';
+
+type Player = {
+  name: string;
+  position: string;
+  number?: number;
+  games: number;
+  goals: number;
+  assists: number;
+  image: string;
+};
 
 export function RosterSection() {
-  const players = [
+  const players: Player[] = [
     {
-      name: 'Sansei',
-      position: 'Pivô',
-      number: 10,
-      goals: 3,
-      assists: 4,
-      image: sanseiImage,
-    },
-    {
-      name: 'Fernando Ferraz',
-      position: 'Goleiro',
-      number: 2,
-      goals: 0,
-      assists: 1,
-      image: fernandoImage,
+      name: 'André',
+      position: 'Ala',
+      number: 6,
+      games: 5,
+      goals: 5,
+      assists: 2,
+      image: andreImage,
     },
     {
       name: 'Rafael',
       position: 'Ala',
       number: 9,
-      goals: 12,
-      assists: 14,
+      games: 4,
+      goals: 5,
+      assists: 4,
       image: rafaelImage,
     },
     {
-      name: 'Eric',
+      name: 'Bolacha',
       position: 'Fixo',
-      number: 30,
-      goals: 2,
-      assists: 4,
-      image: ericImage,
-    },
-    {
-      name: 'André',
-      position: 'Ala',
-      number: 6,
+      number: 5,
+      games: 5,
       goals: 4,
       assists: 2,
-      image: andreImage,
+      image: bolachaImage,
+    },
+    {
+      name: 'Ezequiel Augusto',
+      position: 'Ala',
+      number: 10,
+      games: 4,
+      goals: 4,
+      assists: 0,
+      image: ezequielImage,
+    },
+    {
+      name: 'Alysson',
+      position: 'Ala',
+      number: 20,
+      games: 4,
+      goals: 3,
+      assists: 2,
+      image: alyssonImage,
+    },
+    {
+      name: 'Sansei',
+      position: 'Pivô',
+      number: 11,
+      games: 5,
+      goals: 3,
+      assists: 4,
+      image: sanseiImage,
     },
     {
       name: 'Carlinhos',
       position: 'Pivô',
       number: 7,
+      games: 5,
       goals: 2,
-      assists: 2,
+      assists: 4,
       image: carlinhosImage,
+    },
+    {
+      name: 'Eric',
+      position: 'Fixo',
+      number: 30,
+      games: 5,
+      goals: 2,
+      assists: 5,
+      image: ericImage,
+    },
+    {
+      name: 'Felipe',
+      position: 'Ala',
+      games: 5,
+      goals: 1,
+      assists: 0,
+      image: felipeImage,
+    },
+    {
+      name: 'Fernando Ferraz',
+      position: 'Goleiro',
+      number: 2,
+      games: 5,
+      goals: 1,
+      assists: 1,
+      image: fernandoImage,
     },
   ];
 
@@ -101,21 +154,23 @@ export function RosterSection() {
                   <img 
                     src={player.image}
                     alt={player.name}
-                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent"></div>
                   
                   {/* Number Badge */}
-                  <div 
-                    className="absolute top-4 right-4 w-16 h-16 border-2 border-[#D4A64A] bg-[#0A0A0A]/80 flex items-center justify-center"
-                    style={{ 
-                      fontFamily: 'Bebas Neue, sans-serif',
-                      fontSize: '2rem',
-                      color: '#D4A64A',
-                    }}
-                  >
-                    {player.number}
-                  </div>
+                  {player.number !== undefined && (
+                    <div 
+                      className="absolute top-4 right-4 w-16 h-16 border-2 border-[#D4A64A] bg-[#0A0A0A]/80 flex items-center justify-center"
+                      style={{ 
+                        fontFamily: 'Bebas Neue, sans-serif',
+                        fontSize: '2rem',
+                        color: '#D4A64A',
+                      }}
+                    >
+                      {player.number}
+                    </div>
+                  )}
                 </div>
 
                 {/* Player Info */}
@@ -142,30 +197,18 @@ export function RosterSection() {
                     {player.position}
                   </p>
 
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center gap-2">
-                      <Target className="w-4 h-4 text-[#D4A64A]" />
-                      <span 
-                        className="text-gray-300"
-                        style={{ 
-                          fontFamily: 'Poppins, sans-serif',
-                          fontSize: '0.875rem',
-                        }}
-                      >
-                        {player.goals} Gols
-                      </span>
+                  <div className="grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-[#D4A64A]/10 text-center">
+                    <div className="flex flex-col items-center">
+                      <span className="text-gray-500 text-[10px] font-semibold uppercase tracking-wider mb-1">Jogos</span>
+                      <span className="text-gray-200 text-sm font-semibold">{player.games}</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Zap className="w-4 h-4 text-[#D4A64A]" />
-                      <span 
-                        className="text-gray-300"
-                        style={{ 
-                          fontFamily: 'Poppins, sans-serif',
-                          fontSize: '0.875rem',
-                        }}
-                      >
-                        {player.assists} Assistências
-                      </span>
+                    <div className="flex flex-col items-center border-x border-[#D4A64A]/10">
+                      <span className="text-gray-500 text-[10px] font-semibold uppercase tracking-wider mb-1">Assist.</span>
+                      <span className="text-gray-200 text-sm font-semibold">{player.assists}</span>
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <span className="text-[#D4A64A] text-[10px] font-bold uppercase tracking-wider mb-1">Gols</span>
+                      <span className="text-white text-sm font-bold">{player.goals}</span>
                     </div>
                   </div>
                 </div>
