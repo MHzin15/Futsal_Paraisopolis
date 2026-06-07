@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Mail, Phone, Instagram } from 'lucide-react';
-import logoImage from 'figma:asset/8d0f72923cf451471a5a788fa5c4ac68afeb6aab.png';
+import logoImage from 'figma:asset/logo-transparente.png';
 
 export function ContactSection() {
   return (

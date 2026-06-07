@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { motion } from 'motion/react';
-import logoImage from 'figma:asset/8d0f72923cf451471a5a788fa5c4ac68afeb6aab.png';
+import logoImage from 'figma:asset/logo-transparente.png';
 import lionHeroImage from 'figma:asset/23d58ee174c7714811d80337535f4d9dc21afe86.png';
 
 export function HeroSection() {
